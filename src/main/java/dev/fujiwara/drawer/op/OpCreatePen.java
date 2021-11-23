@@ -2,6 +2,7 @@ package dev.fujiwara.drawer.op;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class OpCreatePen extends Op {
 
@@ -50,4 +51,16 @@ public class OpCreatePen extends Op {
         return penStyle;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpCreatePen that = (OpCreatePen) o;
+        return r == that.r && g == that.g && b == that.b && Double.compare(that.width, width) == 0 && name.equals(that.name) && penStyle.equals(that.penStyle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, r, g, b, width, penStyle);
+    }
 }

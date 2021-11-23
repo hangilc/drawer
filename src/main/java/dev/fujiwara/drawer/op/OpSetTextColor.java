@@ -1,5 +1,7 @@
 package dev.fujiwara.drawer.op;
 
+import java.util.Objects;
+
 public class OpSetTextColor extends Op {
 
     private final int r;
@@ -23,5 +25,18 @@ public class OpSetTextColor extends Op {
 
     public int getB() {
         return b;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpSetTextColor that = (OpSetTextColor) o;
+        return r == that.r && g == that.g && b == that.b;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(r, g, b);
     }
 }

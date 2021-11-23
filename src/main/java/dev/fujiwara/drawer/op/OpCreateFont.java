@@ -1,5 +1,7 @@
 package dev.fujiwara.drawer.op;
 
+import java.util.Objects;
+
 public class OpCreateFont extends Op {
 
     private final String name;
@@ -37,4 +39,16 @@ public class OpCreateFont extends Op {
         return italic;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpCreateFont that = (OpCreateFont) o;
+        return Double.compare(that.size, size) == 0 && weight == that.weight && italic == that.italic && name.equals(that.name) && fontName.equals(that.fontName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, fontName, size, weight, italic);
+    }
 }

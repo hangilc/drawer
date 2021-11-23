@@ -1,6 +1,7 @@
 package dev.fujiwara.drawer.op;
 
 import java.util.List;
+import java.util.Objects;
 
 public class OpDrawChars extends Op {
 
@@ -25,5 +26,18 @@ public class OpDrawChars extends Op {
 
     public List<Double> getYs() {
         return ys;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpDrawChars that = (OpDrawChars) o;
+        return chars.equals(that.chars) && xs.equals(that.xs) && ys.equals(that.ys);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(chars, xs, ys);
     }
 }

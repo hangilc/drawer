@@ -1,5 +1,7 @@
 package dev.fujiwara.drawer.op;
 
+import java.util.Objects;
+
 public class OpCircle extends Op {
 
     private final double cx;
@@ -23,5 +25,18 @@ public class OpCircle extends Op {
 
     public double getR() {
         return r;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpCircle opCircle = (OpCircle) o;
+        return Double.compare(opCircle.cx, cx) == 0 && Double.compare(opCircle.cy, cy) == 0 && Double.compare(opCircle.r, r) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cx, cy, r);
     }
 }
