@@ -1,3 +1,9 @@
+export function drawreJsonToSvg(opsJson, width, height, viewBox){
+    let ops = JSON.parse(opsJson);
+    let options = {width, height, viewBox};
+    return drawerToSvg(ops, options);
+}
+
 export function drawerToSvg(ops, options){
     options = options || {};
 
