@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        (async function(){
+            let {drawerToSvg} = await import("../src/main/resources/drawer-svg.js");
+            let ops = [
+                ["move_to", 10, 10],
+                ["line_to", 200, 10],
+                ["line_to", 200, 20],
+                ["create_font", "default", "sans-serif", "20"],
+                ["set_font", "default"],
+                ["draw_chars", "こんにちは世界", 10, 30],
+                ["set_text_color", 255, 165, 0],
+                ["draw_chars", "こんにちは世界", 10, 60],
+                ["create_pen", "blue_pen", 0, 0, 255, 3, []],
+                ["set_pen", "blue_pen"],
+                ["circle", 100, 100, 30]
+            ];
+            let svg = drawerToSvg(ops, {
+                width: "400",
+                height: "300",
+                viewBox: "0, 0, 400, 300"
+            });
+            document.getElementById("canvas").appendChild(svg)
+        })();
+    </script>
+    <div id="canvas"></div>
+    <style>
+        #canvas {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</body>
+</html>
