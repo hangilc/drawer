@@ -1,8 +1,6 @@
 package dev.fujiwara.drawer.forms.shohousen;
 
-import dev.fujiwara.drawer.DrawerColor;
 import dev.fujiwara.dto.*;
-import dev.fujiwara.util.HokenUtil;
 import dev.fujiwara.util.ShahokokuhoUtil;
 
 import java.time.LocalDate;
@@ -93,12 +91,6 @@ public class ShohousenData {
             memo = "";
         }
         drawer.setDrugLinesAndMemo(drugLines, memo);
-//        if( drugLines != null ){
-//            drawer.setDrugLines(drugLines);
-//        }
-//        if( memo != null && !memo.isEmpty() ){
-//            drawer.setMemo(memo);
-//        }
     }
 
     public void setClinicInfo(ClinicInfoDTO clinicInfo){
