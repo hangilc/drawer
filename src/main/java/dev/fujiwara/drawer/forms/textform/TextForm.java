@@ -1,9 +1,9 @@
 package dev.fujiwara.drawer.forms.textform;
 
+import dev.fujiwara.drawer.drawerform.Box;
+import dev.fujiwara.drawer.drawerform.FormCompiler;
+import dev.fujiwara.drawer.drawerform.Paper;
 import dev.fujiwara.drawer.op.Op;
-import dev.fujiwara.drawer.form.Box;
-import dev.fujiwara.drawer.form.FormCompiler;
-import dev.fujiwara.drawer.form.Paper;
 
 import java.util.Collections;
 import java.util.List;

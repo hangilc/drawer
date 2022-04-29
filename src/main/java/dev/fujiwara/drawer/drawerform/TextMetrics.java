@@ -1,4 +1,4 @@
-package dev.fujiwara.drawer.form;
+package dev.fujiwara.drawer.drawerform;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

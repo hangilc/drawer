@@ -1,4 +1,4 @@
-package dev.fujiwara.drawer.form;
+package dev.fujiwara.drawer.drawerform;
 import java.util.HashMap;
 import java.util.Map;
 
