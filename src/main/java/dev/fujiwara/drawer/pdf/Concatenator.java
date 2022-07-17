@@ -16,9 +16,15 @@ public class Concatenator {
 
     public static void concatenate(List<String> srcFiles, String outFile)
             throws DocumentException, IOException {
-        OutputStream os = new FileOutputStream(outFile);
+        try(OutputStream os = new FileOutputStream(outFile)){
+            concatenate(srcFiles, os);
+        }
+    }
+
+    public static void concatenate(List<String> srcFiles, OutputStream ostream)
+            throws DocumentException, IOException {
         Document doc = new Document();
-        PdfCopy copy = new PdfCopy(doc, os);
+        PdfCopy copy = new PdfCopy(doc, ostream);
         doc.open();
         for (String fileName : srcFiles) {
             InputStream fin = new FileInputStream(fileName);
